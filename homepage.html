@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Navigator</title>
+    <style>
+        body {
+            font-family: 'Titillium Web', sans-serif;
+        }
+        .card1 {
+            position: relative;
+            top: 2em;
+            width: 35em;
+            height: 38em;
+            background: #fafafa;
+            transition: .4s ease-in-out;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+            overflow: hidden;
+            margin: 10px; /* Space around each card */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+    
+        }
+
+        .card2 {
+            position: relative;
+            top: 2em;
+            width: 35em;
+            height: 31em;
+            background: #fafafa;
+            transition: .4s ease-in-out;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+            overflow: hidden;
+            margin: 10px; /* Space around each card */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+    
+        }
+        
+        .card1:hover {
+            ;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px, rgba(0, 0, 0, 0.1) 0px 8px 8px, rgba(0, 0, 0, 0.1) 0px 16px 16px, rgba(0, 0, 0, 0.1) 0px 24px 24px, rgba(0, 0, 0, 0.1) 0px 32px 32px;
+            
+            
+            background: #ffffff;
+        }
+        .card2:hover {
+            
+            
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px, rgba(0, 0, 0, 0.1) 0px 8px 8px, rgba(0, 0, 0, 0.1) 0px 16px 16px, rgba(0, 0, 0, 0.1) 0px 24px 24px, rgba(0, 0, 0, 0.1) 0px 32px 32px;
+            background: #ffffff;
+        }
+
+        .heading {
+            position: relative;
+            color: #0098c9;
+            font-weight: bold;
+            font-size: 2em;
+            padding-top: 1em;
+            padding-left: .7em;
+            transition: .4s ease-in-out;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .details {
+            position: relative;
+            color: black;
+            font-size: 0.6em;
+            padding-top: 1.5em;
+            padding-left: 2em;
+            transition: .4s ease-in-out;
+        }
+
+        .description {
+            position: relative;
+            color: black;
+            padding-bottom: 1em;
+            font-size: 1.2em;
+            padding-top: .2em;
+            padding-left: 1.3em;
+            transition: .4s ease-in-out;
+        }
+        
+        .heading:hover {
+            color: #0077a2; /* Slightly darker shade on hover */
+        }
+
+        .btn {
+            display: block;
+            width: 90%;
+            margin: 0.7em auto;
+            border: none;
+            outline: none;
+            background-color: #fafafa; /* Lighter background color */
+            color: #4d4d4d; /* Dark text color for contrast */
+            font-size: 1em;
+            padding: .9em;
+            border-radius: 10px;
+            font-weight: normal;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            min-width: 160px; /* Consistent button width */
+        }
+
+        .btn:hover {
+            background-color: #0098c9; /* Keep hover effect as is */
+            color: #fff;
+            cursor: pointer;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:focus {
+            outline: 2px solid #0098c9; /* Visible outline for keyboard navigation */
+        }
+
+        .card1, .card2 {
+            padding: 10px;
+            box-sizing: border-box; /* To include padding in the width and height */
+        }
+
+        .card1:hover .details {
+            transform: translateY(13em) translateX(3.5em);
+            
+        }
+        
+        .card2:hover .details {
+            transform: translateY(13em) translateX(3.5em);
+        }
+        
+        .main {
+            display: flex;
+            justify-content: center; /* Center items horizontally */
+            gap: 20px; /* Space between cards */
+            flex-wrap: wrap; /* Allow items to wrap to next line on small screens */
+    
+        }
+        .icon {
+            width: 40px; /* Set the width of the icon */
+            height: 40px; /* Set the height of the icon */
+            margin-left: 10px;
+            margin-bottom: 10px; /* Space between the icon and the heading */
+            vertical-align: middle; /* Align the icon vertically with the text */
+        }
+        
+        .topicon {
+            width: 55px; /* Set the width of the icon */
+            height: 55px; /* Set the height of the icon */
+            margin-left: 10px;
+            margin-bottom: 16px; /* Space between the icon and the heading */
+            vertical-align: middle; /* Align the icon vertically with the text */
+        }
+        
+        .sitetitle {
+            text-align: center;
+            font-size: 3.5em;
+            color: #0098c9; /* Your brand color */
+            font-family: 'Titillium Web', sans-serif;
+            position: relative; /* Needed for absolute positioning of the pseudo-element */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sitetitle b {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #4d4d4d;
+        }
+
+.label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #0098c9;
+    width: 100%;
+    font-size: 1.1em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+
+.label-text {
+  margin-left: 16px;
+}
+        
+.label-text {
+    margin: 0 10px; /* Adjust margin as needed for spacing */
+}
+
+.toggle {
+  isolation: isolate;
+  position: relative;
+  height: 30px;
+  width: 150px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: -8px -4px 8px 0px #ffffff,
+    8px 4px 12px 0px #d1d9e6,
+    4px 4px 4px 0px #d1d9e6 inset,
+    -4px -4px 4px 0px #ffffff inset;
+   
+}
+
+.toggle-state {
+  display: none;
+}
+
+.indicator {
+  height: 100%;
+  width: 200%;
+  background: #ecf0f3;
+  border-radius: 15px;
+  transform: translate3d(-75%, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+  box-shadow: -8px -4px 8px 0px #ffffff,
+    8px 4px 12px 0px #d1d9e6;
+    position: relative;
+
+   
+}
+
+.toggle-state:checked ~ .indicator {
+  transform: translate3d(25%, 0, 0);
+}
+
+.hidden {
+    opacity: 0;
+    transform: scale(0.95); /* Slightly scale down the hidden element */
+    pointer-events: none; /* Disable interactions */
+    visibility: hidden; /* Hide the element */
+}
+        
+    </style>
+</head>
+    <div class="sitetitle">THE <b>NAVIGATOR</b><img src="https://raw.githubusercontent.com/jtk1014/thenavigator/main/sails.png" class="topicon"></div>
+
+    <body>
+
+<label class="label">
+    <span class="label-text left">Internal Resources</span>
+    <div class="toggle">
+        <input class="toggle-state" id="toggle-state" type="checkbox" name="check" value="check">
+        <div class="indicator"></div>
+    </div>
+    <span class="label-text right">Client-Oriented Resources</span>
+</label>
+
+    
+    <div class="main">
+    
+        <div class="card1" id="business-blueprints">
+            
+            <div class="heading">Business Blueprints</div>
+            <img src="https://raw.githubusercontent.com/jtk1014/NNN/main/blueprint_icon.png" class="icon">
+            
+            <button class="btn">Brand Standards</button>
+            <button class="btn">Financial Success Strategy</button>  
+            <button class="btn">Marketing Strategy</button>    
+            <button class="btn">Building & Developing Your Team</button>   
+            <button class="btn">Strategic Leadership & Human Resources</button>   
+            <button class="btn">Baseline System Setup</button>
+            <button class="btn">Peer Engagement</button>
+            <button class="btn">New Owner Roadmap</button>           
+        </div>
+
+        <div class="card2 hidden" id="operational-excellence">
+            
+            <div class="heading">Operational Excellence</div>
+            <img src="https://raw.githubusercontent.com/jtk1014/NNN/main/ops_icon.png" class="icon">
+            
+            <button class="btn">Vendor Resource Page</button>
+            <button class="btn">Managed Services Calculator</button>
+            <button class="btn">Systems in Action</button>
+            <button class="btn">The Client Journey</button>     
+            <button class="btn">Managed State & Client Retention</button>      
+            <button class="btn">Webinars</button>    
+        </div>
+        <!-- Add more cards here if needed -->
+    </div>
+        
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var checkbox = document.getElementById('toggle-state');
+        var businessBlueprints = document.getElementById('business-blueprints');
+        var operationalExcellence = document.getElementById('operational-excellence');
+
+        checkbox.addEventListener('change', function () {
+            if (checkbox.checked) {
+                businessBlueprints.classList.add('hidden');
+                operationalExcellence.classList.remove('hidden');
+            } else {
+                businessBlueprints.classList.remove('hidden');
+                operationalExcellence.classList.add('hidden');
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>
